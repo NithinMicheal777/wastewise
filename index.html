@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="WasteWise — Know your waste. Sort it right. Protect the future. A retro eco-awareness project." />
+  <meta name="theme-color" content="#2f5d3a" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>♻️</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=DM+Sans:wght@400;500;700&family=Special+Elite&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>WasteWise — Know Your Waste. Sort It Right.</title>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- ========== NAVBAR ========== -->
+  <header class="navbar">
+    <nav class="container navbar__inner" aria-label="Main navigation">
+      <a href="#home" class="logo" aria-label="WasteWise — back to top"><span class="logo-icon" aria-hidden="true">♻️</span> WASTEWISE</a>
+
+      <ul id="nav-menu" class="nav-links">
+        <li><a href="#home" data-section="home">Home</a></li>
+        <li><a href="#guide" data-section="guide">Waste Guide</a></li>
+        <li><a href="#sort" data-section="sort">Sort It</a></li>
+        <li><a href="#learn" data-section="learn">Learn</a></li>
+        <li><a href="#impact" data-section="impact">Impact</a></li>
+        <li class="nav-links__cta"><a href="#sort" class="btn">Play Sorting Game</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="#sort" class="btn btn--sm">Play Sorting Game</a>
+        <button type="button" id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu"><span aria-hidden="true">☰</span></button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ========== HERO ========== -->
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <span class="deco deco--leaf1" aria-hidden="true">🍃</span>
+      <span class="deco deco--leaf2" aria-hidden="true">🌿</span>
+      <span class="deco deco--leaf3" aria-hidden="true">🍂</span>
+      <span class="deco deco--star" aria-hidden="true" data-star="34" style="top:8%;right:8%"></span>
+      <span class="deco deco--star" aria-hidden="true" data-star="22" style="top:38%;left:2%;animation-delay:1s"></span>
+      <span class="deco deco--star" aria-hidden="true" data-star="26" style="bottom:8%;left:40%;animation-delay:2s"></span>
+
+      <div class="container hero__grid">
+        <div>
+          <p class="campaign-label">WASTEWISE • ECO AWARENESS PROJECT</p>
+          <h1 id="hero-title">Don't waste it.<span>Know where it goes.</span></h1>
+          <p class="hero__sub">Small sorting decisions create a cleaner tomorrow.</p>
+          <div class="hero__actions">
+            <a href="#guide" class="btn btn--green">Explore Waste Guide</a>
+            <a href="#sort" class="btn">Play Sort It</a>
+          </div>
+        </div>
+        <div class="hero__art">
+          <div class="hero__sunburst" aria-hidden="true"></div>
+          <div id="hero-art"></div>
+        </div>
+      </div>
+    </section>
+    <div class="strip" aria-hidden="true"><div class="strip__track" id="strip"></div></div>
+
+    <!-- ========== WASTE IDENTIFIER ========== -->
+    <section id="identify" class="section section--green torn-top" aria-labelledby="identify-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Quick Waste Identifier</span>
+          <h2 id="identify-title">Where does this go?</h2>
+          <p>Pick an everyday object and find out which bin it belongs in, what to do with it, and why it matters.</p>
+        </div>
+        <div class="identifier__grid">
+          <div class="reveal"><div class="item-picker" id="item-picker" role="group" aria-label="Choose an everyday item"></div></div>
+          <div class="reveal" style="transition-delay:120ms"><div id="result" aria-live="polite"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== WASTE GUIDE ========== -->
+    <section id="guide" class="section section--paper" aria-labelledby="guide-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Waste Guide</span>
+          <h2 id="guide-title">Know your waste</h2>
+          <p>Seven kinds of waste, seven different journeys. Tap a card to learn more.</p>
+        </div>
+        <div class="filters" id="filters" role="group" aria-label="Filter waste categories"></div>
+        <div class="guide-grid" id="guide-grid"></div>
+      </div>
+    </section>
+
+    <!-- ========== GAMES ========== -->
+    <section id="sort" class="section section--mustard" aria-labelledby="sort-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Sort It</span>
+          <h2 id="sort-title">Test your sorting skills</h2>
+          <p>Two ways to play. Switching modes always starts fresh, and any running timer is stopped.</p>
+        </div>
+        <div class="game-tabs" role="group" aria-label="Choose a game mode">
+          <button type="button" class="btn btn--cream" data-mode="classic" aria-pressed="true">🗑️ Sort it out</button>
+          <button type="button" class="btn btn--cream" data-mode="challenge" aria-pressed="false">⏱️ 30-second challenge</button>
+        </div>
+        <div id="game-root" class="reveal"></div>
+      </div>
+    </section>
+
+    <!-- ========== LEARN ========== -->
+    <section id="learn" class="section section--green" aria-labelledby="learn-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Learn</span>
+          <h2 id="learn-title">Why should we care?</h2>
+          <p>Every product has a journey. The best waste is the waste that never happens. Five simple habits turn a throw-away culture into a circular one.</p>
+        </div>
+
+        <div class="rs-grid">
+          <article class="r-block reveal"><span class="r-block__n" aria-hidden="true">01</span><span class="r-block__icon" aria-hidden="true">🛒</span><h3>Reduce</h3><p>Buy only what you need.</p></article>
+          <article class="r-block reveal" style="transition-delay:70ms"><span class="r-block__n" aria-hidden="true">02</span><span class="r-block__icon" aria-hidden="true">🫙</span><h3>Reuse</h3><p>Give products another life.</p></article>
+          <article class="r-block reveal" style="transition-delay:140ms"><span class="r-block__n" aria-hidden="true">03</span><span class="r-block__icon" aria-hidden="true">🔧</span><h3>Repair</h3><p>Fix before replacing.</p></article>
+          <article class="r-block reveal" style="transition-delay:210ms"><span class="r-block__n" aria-hidden="true">04</span><span class="r-block__icon" aria-hidden="true">♻️</span><h3>Recycle</h3><p>Separate materials correctly.</p></article>
+          <article class="r-block reveal" style="transition-delay:280ms"><span class="r-block__n" aria-hidden="true">05</span><span class="r-block__icon" aria-hidden="true">✋</span><h3>Refuse</h3><p>Avoid unnecessary single-use items.</p></article>
+        </div>
+
+        <div class="reveal">
+          <h3 style="text-align:center;font-size:clamp(1.3rem,3.5vw,2rem);color:var(--mustard)">The eco loop</h3>
+          <div class="loop" id="loop" role="group" aria-label="The eco loop: select a step to read about it"></div>
+          <p class="loop__caption" id="loop-caption" aria-live="polite">Tap a step to explore it.</p>
+          <span class="loop__again"><span class="spin" aria-hidden="true" id="loop-spin"></span> …and around we go again</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== COMMON MISTAKES ========== -->
+    <section id="mistakes" class="section section--paper" aria-labelledby="mistakes-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Common mistakes</span>
+          <h2 id="mistakes-title">Don't get tricked by the bin!</h2>
+          <p>Some habits feel right but quietly spoil recycling. Here are the myths to drop.</p>
+        </div>
+        <div class="mistake-grid" id="mistake-grid"></div>
+        <div class="notice reveal" role="note" id="local-rules-note"></div>
+      </div>
+    </section>
+
+    <!-- ========== E-WASTE ========== -->
+    <section id="ewaste" class="section section--teal ewaste" aria-labelledby="ewaste-title">
+      <div class="container ewaste__grid">
+        <div class="reveal">
+          <span class="eyebrow">E-waste</span>
+          <h2 id="ewaste-title">Your old phone isn't just trash.</h2>
+          <p><strong>E-waste</strong> is any discarded device with a plug, battery or circuit board. Inside are useful materials worth recovering and substances that can harm people and nature if handled badly.</p>
+          <div class="device-row" id="device-row" aria-label="Examples of e-waste"></div>
+          <ul class="ewaste-points">
+            <li><strong>Why it matters:</strong> electronics contain metals that can be recovered and reused, saving mining and energy.</li>
+            <li><strong>Why not the regular bin:</strong> batteries and circuit parts can leak toxins, start fires and contaminate soil and water.</li>
+            <li><strong>Use authorized channels:</strong> take-back programs and authorized collection or recycling facilities are equipped to handle devices safely.</li>
+            <li><strong>Protect your privacy:</strong> phones, laptops and tablets store personal data. Back up and wipe them before you let go.</li>
+          </ul>
+        </div>
+        <div class="reveal" style="transition-delay:150ms">
+          <div class="checklist">
+            <h3>E-waste checklist</h3>
+            <ul id="checklist"></ul>
+            <p id="check-status" aria-live="polite" style="margin:0 0 1rem;font-family:var(--font-type)"></p>
+            <button type="button" class="btn btn--sm" id="check-reset" disabled>Reset checklist</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== IMPACT + DAILY CHALLENGE ========== -->
+    <section id="impact" class="section impact" aria-labelledby="impact-title">
+      <div class="container">
+        <div class="impact__poster reveal">
+          <span class="deco-star" id="imp-star1" style="position:absolute;top:12px;left:14px" aria-hidden="true"></span>
+          <span class="deco-star" id="imp-star2" style="position:absolute;top:12px;right:14px" aria-hidden="true"></span>
+          <span class="eyebrow" style="background:var(--cream);color:var(--brown)">Impact</span>
+          <h2 id="impact-title">Every small action counts.</h2>
+          <div class="counters" id="counters"></div>
+          <p class="demo-note">* Demo / project statistics for this awareness project. They are not real-world measurements.</p>
+          <div class="impact__earth" id="impact-earth"></div>
+        </div>
+        <div class="reveal"><div class="daily" id="daily"></div></div>
+      </div>
+    </section>
+
+    <!-- ========== QUIZ ========== -->
+    <section id="quiz" class="section section--mustard" aria-labelledby="quiz-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Eco quiz</span>
+          <h2 id="quiz-title">How wise are you?</h2>
+          <p id="quiz-intro"></p>
+        </div>
+        <div class="quiz-box game-board reveal" id="quiz-root"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <h2 class="footer__big">The planet doesn't need perfect people. It needs better habits.</h2>
+      <p class="footer__brand"><span id="footer-symbol" aria-hidden="true"></span> WASTEWISE</p>
+      <p class="footer__tag">Learn • Sort • Reduce • Reuse • Recycle</p>
+      <nav aria-label="Footer navigation">
+        <ul class="footer__links">
+          <li><button type="button" id="about-toggle" aria-expanded="false">About</button></li>
+          <li><a href="#guide">Waste Guide</a></li>
+          <li><a href="#sort">Sorting Game</a></li>
+          <li><a href="#learn">Eco Tips</a></li>
+          <li><a href="#disclaimer">Educational Disclaimer</a></li>
+        </ul>
+      </nav>
+      <p class="disclaimer" id="about" style="margin-bottom:1rem" hidden><strong>About:</strong> WasteWise is a frontend-only, educational awareness project built with plain HTML, CSS and JavaScript. It has no backend, accounts or tracking. Everything you do here stays in your browser.</p>
+      <p class="disclaimer" id="disclaimer" tabindex="-1"><strong>Educational disclaimer.</strong> <span id="disclaimer-text"></span> For e-waste and hazardous household waste, use authorized collection or recycling facilities where available. Statistics shown on this site are demo values.</p>
+      <p class="footer__small">© <span id="year"></span> WasteWise · Eco Awareness Project</p>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
